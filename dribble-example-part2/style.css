@@ -1,0 +1,483 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Open Sans", Lato, Roboto, sans-serif;
+}
+
+body {
+  background-color: #E8E8F7; 
+}
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 1fr 2fr;
+  max-width: 510px;
+  min-height: 560px;
+  margin: 50px auto;
+  background-color: #FFF;;
+  box-shadow: 2px 2px 2px 5px rgba(218, 217, 239,0.5),
+             -2px -2px 2px 5px rgba(218, 217, 239,0.5);
+}
+
+.container::before {
+  position: absolute;
+  content: "";
+  height: 80px;
+  width: 80px;
+  top: 190px;
+  right: 30px;
+  border-radius: 50%;
+  background-color: #FF5A60;
+  z-index: 1;
+}
+
+/* header */
+header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 1fr 3fr;
+  background: linear-gradient(rgba(75, 66, 116, 0.7), rgba(75, 66, 116, 0.7)), url(https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80);
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+header::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 5px;
+  top: 216px;
+  right: 66px;
+  border-radius: 10px;
+  background-color: white;
+  z-index: 2;
+}
+
+header::after {
+  position: absolute;
+  content: "";
+  height: 5px;
+  width: 26px;
+  top: 227px;
+  right: 55px;
+  border-radius: 10px;
+  background-color: white;
+  z-index: 2;
+}
+
+header div, header p {
+  color: #FFF;  
+}
+
+div.header-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+}
+
+div.header-top > div:nth-child(1) {
+  font-size: 0.5em;
+}
+
+div.header-top > div:nth-child(2) {
+  font-size: 0.7em;
+}
+
+div.header-top > i {
+  font-size: 1.1em;
+}
+
+header > p {
+  margin: 15px;
+  align-self: end;
+  font-size: 2em;
+}
+
+.header-middle {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+div.header-middle > i:first-child {
+  font-size: 1.2em;
+  align-self: center;
+}
+
+div.header-middle > div:nth-child(2) {
+  font-size: 0.4em;
+  align-self: center;
+}
+
+div.header-middle > div:nth-child(2) i {
+  margin: 2px;
+}
+
+/* main part: common */
+.todo {
+  margin-top: 40px;
+}
+
+div.todo > p {
+  color: #9DA7BB;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  margin: 0 0 20px 20px;
+}
+
+/* main part: today 1 */
+
+div.today .todo--1 {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 3fr 1fr;
+  grid-auto-flow: row;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  border-bottom: 1px solid #E7E9F0;
+  padding: 15px;
+}
+
+div.today .done-1__label {
+  display: inline-block;
+}
+
+div.today .done-1__input {
+  display: none;
+}
+
+div.today .done-1__button {
+  position: relative;
+  display: inline-block;
+  background-color: #F9FAFC;
+  border: solid 1.1px #E8EBF1;
+  border-radius: 2px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+div.today .done-1__button::before {
+  position: absolute;
+  top: -4px;
+  left: 5px;
+  content: "˅";
+  display: none;
+  width: 20px;
+  height: 20px;
+  font-size: 2.5em;
+  color: #45457E;
+  transition: all 0.3s ease;
+}
+
+div.today .done-1__input:checked + .done-1__button::before {
+  display: inline-block; 
+}
+
+.fa-mobile-alt {
+  font-size: 2.5em;
+  color: #45457E;
+}
+
+div.today .done-1__div {
+  justify-self: start;
+}
+
+div.today .done-1__div > p:nth-child(1) {
+  font-size: 1.2em;
+  color: #45457E;
+}
+
+div.today .done-1__div > p:nth-child(2) {
+  color: #9EA8BC;
+}
+
+div.today .star-1__label {
+  display: inline-block;
+}
+
+div.today .star-1__input {
+  display: none;
+}
+
+.fa-star {
+  font-size: 1.8em;
+  color: #E5E8EF;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+div.today .star-1__input:checked + .fa-star {
+  color: #FFC00C;
+}
+
+/* main part: today 2 */
+
+div.today .todo--2 {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 3fr 1fr;
+  grid-auto-flow: row;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  padding: 15px;
+}
+
+div.today .done-2__label {
+  display: inline-block;
+}
+
+div.today .done-2__input {
+  display: none;
+}
+
+div.today .done-2__button {
+  position: relative;
+  display: inline-block;
+  background-color: #F9FAFC;
+  border: solid 1.1px #E8EBF1;
+  border-radius: 2px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+div.today .done-2__button::before {
+  position: absolute;
+  top: -4px;
+  left: 5px;  
+  content: "˅";
+  display: none;
+  width: 20px;
+  height: 20px;
+  font-size: 2.5em;
+  color: #45457E;
+  transition: all 0.3s ease;
+}
+
+div.today .done-2__input:checked + .done-2__button::before {
+  display: inline-block;
+}
+
+.fa-paint-brush {
+  font-size: 2em;
+  color: #C6AA8F;
+}
+
+div.today .done-2__div {
+  justify-self: start;
+}
+
+div.today .done-2__div > p {
+  font-size: 1.2em;
+  color: #45457E;
+}
+
+div.today .star-2__label {
+  display: inline-block;
+}
+
+div.today .star-2__input {
+  display: none;
+}
+
+div.today .star-2__input:checked + .fa-star {
+  color: #FFC00C;
+}
+
+
+/* main part: tomorrow 1 */
+
+div.tomorrow .todo--1 {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 3fr 1fr;
+  grid-auto-flow: row;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  border-bottom: 1px solid #E7E9F0;
+  padding: 15px;
+}
+
+div.tomorrow .done-1__label {
+  display: inline-block;
+}
+
+div.tomorrow .done-1__input {
+  display: none;
+}
+
+div.tomorrow .done-1__button {
+  position: relative;
+  display: inline-block;
+  background-color: #F9FAFC;
+  border: solid 1.1px #E8EBF1;
+  border-radius: 2px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+div.tomorrow .done-1__button::before {
+  position: absolute;
+  top: -4px;
+  left: 5px;
+  content: "˅";
+  display: none;
+  width: 20px;
+  height: 20px;
+  font-size: 2.5em;
+  color: #45457E;
+  transition: all 0.3s ease;
+}
+
+div.tomorrow .done-1__input:checked + .done-1__button::before {
+  display: inline-block; 
+}
+
+.fa-window-maximize {
+  font-size: 2em;
+  color: #45457E;
+}
+
+div.tomorrow .done-1__div {
+  justify-self: start;
+}
+
+div.tomorrow .done-1__div > p:nth-child(1) {
+  font-size: 1.2em;
+  color: #45457E;
+}
+
+div.tomorrow .done-1__div > p:nth-child(2) {
+  color: #9EA8BC;
+}
+
+div.tomorrow .star-1__label {
+  display: inline-block;
+}
+
+div.tomorrow .star-1__input {
+  display: none;
+}
+
+.fa-star {
+  font-size: 1.8em;
+  color: #E5E8EF;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+div.tomorrow .star-1__input:checked + .fa-star {
+  color: #FFC00C;
+}
+
+/* main part: tomorrow 2 */
+
+div.tomorrow .todo--2 {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 3fr 1fr;
+  grid-auto-flow: row;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  border-bottom: 1px solid #E7E9F0;
+  padding: 15px;
+}
+
+div.tomorrow .done-2__label {
+  display: inline-block;
+}
+
+div.tomorrow .done-2__input {
+  display: none;
+}
+
+div.tomorrow .done-2__button {
+  position: relative;
+  display: inline-block;
+  background-color: #F9FAFC;
+  border: solid 1.1px #E8EBF1;
+  border-radius: 2px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+div.tomorrow .done-2__button::before {
+  position: absolute;
+  top: -4px;
+  left: 5px;  
+  content: "˅";
+  display: none;
+  width: 20px;
+  height: 20px;
+  font-size: 2.5em;
+  color: #45457E;
+  transition: all 0.3s ease;
+}
+
+div.tomorrow .done-2__input:checked + .done-2__button::before {
+  display: inline-block;
+}
+
+.fa-envelope {
+  font-size: 2.1em;
+  color: #FF5A60;
+}
+
+div.tomorrow .done-2__div {
+  justify-self: start;
+}
+
+div.tomorrow .done-2__div > p {
+  font-size: 1.2em;
+  color: #45457E;
+}
+
+div.tomorrow .star-2__label {
+  display: inline-block;
+}
+
+div.tomorrow .star-2__input {
+  display: none;
+}
+
+div.tomorrow .star-2__input:checked + .fa-star {
+  color: #FFC00C;
+}
+
+/* main part: tomorrow 3 */
+div.tomorrow .todo--3 {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 7fr 1fr;
+  grid-auto-flow: row;
+  justify-content: right;
+  border-bottom: 1px solid #E7E9F0;
+  padding: 15px 15px 15px 110px;
+  color: #D6D9E0;
+}
+
+.todo--3 > p {
+  font-size: 1.2em;
+  text-decoration: line-through;
+}
+
+.fa-trash-alt {
+  font-size: 1.5em;
+}
