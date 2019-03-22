@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Ubuntu", "Oswald", "Montserrat", sans-serif;
+  background-color: #333333;
+}
+
+.container--outer {
+  position: relative;
+  width: 1000px;
+  height: 800px;
+  margin: 50px auto;
+  background: linear-gradient(
+      rgba(51, 51, 51, 0.4),
+      rgba(51, 51, 51, 0.5),
+      rgba(51, 51, 51, 0.7),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("https://images.unsplash.com/photo-1530959106156-50f49c30932d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 2px 2px 20px 2px rgba(36, 36, 36, 0.5),
+    -2px -2px 20px 2px rgba(36, 36, 36, 0.5);
+}
+
+.container--inner {
+  width: 800px;
+  height: 700px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-rows: repeat(2, 4fr) 1fr;
+  grid-template-columns: 6fr repeat(4, 1fr);
+}
+
+.column__background {
+  grid-row-start: 1;
+  grid-row-end: span 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  background: linear-gradient(
+      rgba(239, 238, 232, 0.1),
+      rgba(239, 238, 232, 0.1)
+    ),
+    url("https://cdn.pixabay.com/photo/2014/08/01/15/51/manhattan-407703_1280.jpg");
+  background-size: cover;
+  background-position: 60% 50%;
+  background-repeat: no-repeat;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.column__title {
+  grid-area: 2 / 1 / span 1 / span 1;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 8em;
+  margin-left: 30px;
+}
+
+.column__tags {
+  grid-area: 3 / 1 / span 1 / span 1;
+  color: #ffffff;
+  font-size: 0.8em;
+  border-top: 0.1px solid #a4a18e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column__tags > p {
+  margin: 8px;
+}
+
+.column__description {
+  grid-area: 1 / 2 / span 1/ span 4;
+  background: #efeee8;
+  border-top-right-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.column__description > p:first-child {
+  font-weight: bold;
+  font-size: 1.4em;
+  padding: 0 0 10px 40px;
+}
+
+.column__description > p:nth-child(2) {
+  color: #e3cc48;
+  font-size: 0.9em;
+  padding: 0 0 40px 40px;
+}
+
+.column__description > p:last-child {
+  color: #a4a18e;
+  font-size: 1.1em;
+  padding-left: 40px;
+}
+
+.column__picture0 {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 4;
+  background-image: url("https://image.freepik.com/free-vector/statue-liberty_53876-34781.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.column__picture1 {
+  grid-area: 3 / 2 / 4 / 3;
+  background: linear-gradient(
+      rgba(164, 161, 142, 0.7),
+      rgba(164, 161, 142, 0.7)
+    ),
+    url("https://cdn.pixabay.com/photo/2016/11/23/15/32/architecture-1853552_1280.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.column__picture2 {
+  grid-area: 3 / 3 / 4 / 4;
+  background: linear-gradient(
+      rgba(164, 161, 142, 0.7),
+      rgba(164, 161, 142, 0.7)
+    ),
+    url("https://cdn.pixabay.com/photo/2015/12/08/00/40/empire-state-building-1081929_1280.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.column__picture3 {
+  grid-area: 3 / 4 / 4 / 5;
+  background: linear-gradient(
+      rgba(164, 161, 142, 0.7),
+      rgba(164, 161, 142, 0.7)
+    ),
+    url("https://cdn.pixabay.com/photo/2014/02/17/10/20/statue-of-liberty-267949_1280.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.column__pictures {
+  grid-area: 3 / 5 / 4 / 6;
+  background-color: #222629;
+  border-bottom-right-radius: 15px;
+}
+
+.column__pictures p:first-child {
+  color: #47494c;
+  font-weight: bold;
+  margin: 30px;
+}
