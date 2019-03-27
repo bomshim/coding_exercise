@@ -20,3 +20,14 @@ body {
   margin: 70px auto;
   background-color: #ffffff;
 }
+
+.restaurant-img {
+  width: 150px;
+  height: 150px;
+  border: 8px solid #474850;
+  border-radius: 100px;
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  display: block;
+  margin: 0 auto;
+}
