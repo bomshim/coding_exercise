@@ -14,14 +14,18 @@ body {
 .restaurant-reservation {
   position: relative;
   display: grid;
-  grid-template-rows: 1fr 3fr 3fr 2fr 2fr;
+  grid-template-rows: 1fr 2fr 1fr 3fr 2fr 2fr;
   max-width: 400px;
   min-height: 560px;
   margin: 70px auto;
   background-color: #ffffff;
 }
 
-.restaurant-img {
+.restaurant-header {
+  text-transform: uppercase;
+}
+
+.restaurant-img > img {
   width: 150px;
   height: 150px;
   border: 8px solid #474850;
