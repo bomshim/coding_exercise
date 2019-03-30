@@ -21,7 +21,7 @@ body {
   background-color: #ffffff;
 }
 
-.restaurant-header {
+.restaurant-name {
   text-transform: uppercase;
 }
 
@@ -34,4 +34,8 @@ body {
   clip-path: circle(50% at 50% 50%);
   display: block;
   margin: 0 auto;
+}
+
+.restaurant-time ul {
+  list-style: none;
 }
